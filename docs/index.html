@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gesture Mouse</title>
+<meta name="description" content="Control your mouse with hand gestures and a webcam. Download it and run it on your own laptop.">
+<style>
+  :root {
+    --bg: #0b0c0f;
+    --surface: #15171c;
+    --border: #262a33;
+    --text: #e9eaee;
+    --muted: #9aa0ac;
+    --accent: #5b8cff;
+    --accent-text: #05070d;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 20px 80px;
+  }
+
+  .eyebrow {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 6vw, 44px);
+    line-height: 1.1;
+    margin: 0 0 16px;
+  }
+
+  .lead {
+    color: var(--muted);
+    font-size: 18px;
+    margin: 0 0 32px;
+    max-width: 56ch;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-text);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+
+  .card h2 {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+
+  ul.gestures {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+  }
+
+  ul.gestures li {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+  }
+
+  ul.gestures strong {
+    color: var(--text);
+  }
+
+  ul.gestures span {
+    color: var(--muted);
+  }
+
+  pre {
+    background: #0e1013;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    overflow-x: auto;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  code {
+    font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+
+  .steps {
+    display: grid;
+    gap: 16px;
+  }
+
+  .steps li {
+    margin-left: 18px;
+  }
+
+  footer {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 48px;
+  }
+
+  footer a {
+    color: var(--muted);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #ffffff;
+      --surface: #f6f7f9;
+      --border: #e5e7eb;
+      --text: #14161a;
+      --muted: #5b6270;
+      --accent: #3b63e0;
+      --accent-text: #ffffff;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">Gesture Mouse</p>
+    <h1>Control your mouse with your hand.</h1>
+    <p class="lead">
+      A small, free tool that turns your webcam into a mouse. Move your index
+      finger to move the cursor, pinch to click, and hold up two fingers to
+      scroll — no extra hardware needed.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://github.com/saadnizami1/gesture-mouse/archive/refs/heads/main.zip" download>
+        Download for your laptop
+      </a>
+      <a class="btn btn-secondary" href="https://github.com/saadnizami1/gesture-mouse">
+        View on GitHub
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>Gestures</h2>
+      <ul class="gestures">
+        <li><strong>Move</strong><span>— point your index finger, the cursor follows</span></li>
+        <li><strong>Click</strong><span>— pinch your thumb and index finger together</span></li>
+        <li><strong>Scroll</strong><span>— hold up your index and middle fingers</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Run it locally</h2>
+      <ol class="steps">
+        <li>Download the ZIP above and unzip it, or clone the repo.</li>
+        <li>Install <a href="https://www.python.org/downloads/">Python</a> if you don't already have it.</li>
+        <li>
+          Open a terminal in the <code>gesture-mouse</code> folder and run:
+          <pre><code>pip install -r requirements.txt
+python gesture_mouse.py</code></pre>
+        </li>
+        <li>On Windows, you can also just double-click <code>start.bat</code>.</li>
+      </ol>
+    </div>
+
+    <footer>
+      Works on Windows, macOS, and Linux with a webcam and Python installed.
+      <br>
+      <a href="https://github.com/saadnizami1/gesture-mouse">github.com/saadnizami1/gesture-mouse</a>
+    </footer>
+  </div>
+</body>
+</html>
