@@ -1,9 +1,6 @@
-# gesture mouse
-Control your mouse using hand gestures and webcam
 # Gesture Mouse
 
-Move your mouse using your hand and your webcam 
-This is a fun project that uses your **index finger** to move the mouse and **thumb + finger touch** to click. You can scroll as well
+Control your mouse using hand gestures and your webcam. Move your **index finger** to move the cursor, touch your **thumb and index finger** together to click, and hold up your **index + middle fingers** to scroll.
 
 ---
 
@@ -11,35 +8,36 @@ This is a fun project that uses your **index finger** to move the mouse and **th
 
 1. Download and install [Python](https://www.python.org/downloads/)
 2. Open **CMD** or **Terminal**
-3. Go into the folder where your files are
-4. Type this to install the required libraries:
+3. Go into the `gesture-mouse` folder
+4. Install the required libraries:
 
-pip install opencv-python mediapipe pyautogui
-
-
-Copy
-Edit
+   ```
+   pip install -r requirements.txt
+   ```
 
 5. Then run:
 
-python gesture_mouse.py
+   ```
+   python gesture_mouse.py
+   ```
 
+   OR just double-click on `start.bat` (Windows)
 
-
-OR just double-click on `start.bat`
+Press **Esc** at any time to quit.
 
 ---
 
 ## What it Can Do
 
--  Move your hand to move the mouse
-- 👆 Touch your **thumb + index finger** to click
-- ✌️ Hold up index + middle fingers to scroll down
+- Move your hand to move the mouse
+- Touch your **thumb + index finger** to click
+- Hold up **index + middle fingers** to scroll down
 
 ---
 
 ## Files Included
 
-- `gesture_mouse.py` → The actual Python program
-- `start.bat` → A Windows shortcut to start it
-- `README.md` → this file
+- `gesture_mouse.py` → the main program
+- `requirements.txt` → the required Python libraries
+- `start.bat` → a Windows shortcut to start it
+- `Readme.md` → this file
